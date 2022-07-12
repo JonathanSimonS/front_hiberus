@@ -1,0 +1,35 @@
+p::first-letter{
+    color: blue;
+    font-size: xx-large;
+    padding-left: 20px;
+}
+p::first-line{
+    color: cadetblue;
+    font-size: 1.2rem;
+}
+p::before{
+    content: "Érase una vez...";
+}
+p::after{
+    content: "FIN";
+}
+p::selection{
+    background-color: yellow;
+}
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap'); */
+
+#titulo1{
+    text-shadow: 5px 3px 3px darkgrey;
+    font-family: 'Rubik Moonrocks', cursive;
+}
+#titulo2{
+    text-shadow: 10px 10px 1px darkgrey;
+}
+#titulo3{
+    text-shadow: -5px -3px 3px darkgrey;
+}
+#titulo4{
+    text-shadow: 5px 3px 3px darkgrey;
+}

@@ -1,0 +1,65 @@
+*{
+    margin: 0 auto;
+    padding: 0 auto;
+}
+body{
+    background-color: rgb(128, 128, 128);
+    max-width: 100%;
+}
+.contenido{
+    background-color: rgb(79, 138, 216);
+    max-width: 80%;
+
+}
+.titulo{
+    text-align: center;
+}
+header{
+    margin-top: 20px ;
+    background-color: rgb(21, 61, 121);
+    color: rgb(182, 182, 182);
+    text-align: center;
+}
+#menu{
+    text-align: right;
+}
+section{
+    width: 70%;
+    background-color: blueviolet;
+    float: left;
+}
+.publicidad{
+    float: left;
+    width: 30%;
+    background-color: rgb(126, 184, 184);
+}
+aside{
+    float: left;
+    width: 30%;
+    background-color: rgb(136, 168, 168);
+
+}
+
+nav{
+    margin-top: 20px ;
+    height: 80px;
+}
+
+ul li{
+    display: inline;
+    margin: 5px;
+}
+
+.imagenMenu{
+    float: left;
+}
+
+footer{
+    clear: both;
+    padding: 20px;
+    color: white;
+    background-color: black;
+}
+footer p{
+    text-align: right;
+}

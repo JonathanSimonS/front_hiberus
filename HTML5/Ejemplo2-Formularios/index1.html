@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <h2 class="">Formulario de prueba</h2>
+
+    <div class="contenedor">
+        <form action="destino" method="post">
+
+            <fieldset>
+                <legend>Datos personales </legend>
+
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="email"><br>
+
+                <label for="contrasena">Contraseña:</label>
+                <input type="text" name="contrasena" id="contrasena"><br>
+
+                <label for="cv">Adjuntar curriculum:</label>
+                <input type="file" name="cv" id="cv"><br>
+
+                <label> Sexo:</label>
+                <input type="radio" name="sexo" id="hombre">
+                <label for="hombre">Hombre</label>
+                <input type="radio" name="sexo" id="mujer">
+                <label for="hombre">Mujer</label>
+            </fieldset>
+
+            <fieldset>
+
+                <legend>Datos académicos </legend>
+                
+                <label >Idiomas:</label> <br>
+
+                <input type="checkbox" name="idioma" id="ingles" value="ingles">
+                <label for="ingles"> Inglés </label>
+
+                <input type="checkbox" name="idioma" id="aleman" value="aleman">
+                <label for="ingles"> Alemán </label>
+                
+                <input type="checkbox" name="idioma" id="frances" value="frances">
+                <label for="ingles"> Francés </label> <br><br>
+
+                <label for="nivel">Nivel de estudios:</label>
+                <select name="estudios" id="nivel">
+                    <option value="nada">Sin estudios</option>
+                    <option value="cfgm">Grado Medio</option>
+                    <option value="cfgs">Grado Superior</option>
+                    <option value="grado">Grado</option>
+                </select><br><br>
+
+                <label for="cursos">Lista de cursos:</label> 
+                <select name="cursos" id="cursos" multiple="multiple">
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="angular">Angular</option>
+                    <option value="react">React</option>
+                </select><br><br>
+
+                <label for="experiencia">Experiencia laboral:</label> <br/>
+                <textarea name="experiencia" id="experiencia" cols="30" rows="10" 
+                        placeholder="Cuentanos tu experiencia laboral">
+                </textarea><br>
+
+            </fieldset>
+
+
+            <input type="reset" value="Limpiar">
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+   
+</body>
+</html>

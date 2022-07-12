@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+div{
+    width: 80%;
+    min-height: 100px;
+    background-color: bisque;
+    margin: 50px;
+}
+#cuadro1{
+    background: url(../img/logoh.jpeg) no-repeat ;
+    background-size: cover;
+}
+#cuadro2{
+    background: url(../img/logoh.jpeg) center  no-repeat;
+}
+
+.cont{
+    width: 80%;
+    height: 100px;
+    margin: 20px;
+    background-color: bisque;
+}
+.defecto{
+    transform: rotate(-5deg);
+    background: linear-gradient(to bottom, blue, pink, yellow)
+}
+.arriba{
+    opacity: 0.5;
+    background: linear-gradient(to top, blue, pink, yellow)
+}
+.izq-der{
+    background: linear-gradient(to right, blue, pink, yellow)
+}
+.der-izq{
+    background: linear-gradient(to left, blue, pink, yellow)
+}
+.dder{
+    background: linear-gradient(to top right, blue, rgb(44, 146, 206), yellow)
+}
+.dizq{
+    background: linear-gradient(to top left, blue, rgb(34, 156, 226), rgb(129, 231, 226))
+}
+.por_defecto{
+    background: radial-gradient( blue, rgb(34, 156, 226));
+}
+.circulo{
+    background: radial-gradient(circle, blue, rgb(34, 156, 226), rgb(129, 231, 226))
+}
+.elipse{
+    background: radial-gradient(ellipse, blue, rgb(34, 156, 226), rgb(129, 231, 226))
+}
+.repetir{
+    background: repeating-radial-gradient(circle, blue 10%, pink 20%, yellow 30%)
+}

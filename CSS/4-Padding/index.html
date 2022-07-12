@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .grid-container{
+            display: grid;
+            row-gap: 10px; /*separación entre filas */
+            border: thin solid rgb(10, 10, 10);
+            grid-template-columns: auto ;
+            /* text-align: center; */
+            margin: 10px;
+        }
+
+        .fondo{
+            background: url();
+            background-color: rgb(216, 216, 216);
+        }
+        .borde{
+            border: 5px dotted red;
+
+        }
+        .padding{
+            padding: 20px;
+        }
+        .margin{
+            margin: 30px 15px 5px 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- div*5{Texto ejemplo $}.grid-item -->
+    <div class="grid-container">
+        <div class="grid-item borde fondo">
+            <div>Border</div>
+        </div>
+    </div>
+    <div class="grid-container">
+        <div class="grid-item borde padding ">
+            <div  class="fondo">Border y padding</div>
+        </div>
+    </div>
+    <div class="grid-container">
+        <div class="grid-item borde padding margin">
+            <div  class="fondo">
+                Border, padding y margin
+            </div> 
+        </div>
+    </div>
+    <div class="grid-container padding">
+        <div class="grid-item fondo margin">
+                Padding y margin
+        </div>
+    </div>
+    <div class="grid-container">
+        <div class="grid-item margin fondo">Margin</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+input:disabled{
+    color: rebeccapurple;
+}
+input[type=checkbox]:checked + label{
+    color: green;
+    font-weight: bold;
+}
+input:focus + label{
+    border: thin solid coral;
+    outline: none;
+}
+
+/* De ol seleccionar nombres que comiencen por P, poner fondo amarillo */
+ol>li:is([id^='P'],[id^='M']){
+    background-color: yellow;
+    width: fit-content;
+}
+/* De ol seleccionar nombres que terminen por e, poner fondo aqua */
+ol>li[id$='e']{
+    background-color: aqua;
+    width: fit-content;
+}
+/* De ol seleccionar nombres que contienen por t, poner fondo hotpin */
+
+ol>li:is([id^="P"][id$="a"]) {
+    background-color: greenyellow;
+    width: fit-content;
+}
+
+ul li:first-child{
+    background-color: rgb(132, 0, 255);
+    width: fit-content;
+
+}
+
+ul li:last-child{
+    background-color: pink;
+    width: fit-content;
+}
+
+#tabla1 tr:nth-child(odd){
+    background-color: beige;
+}
+#tabla1 tr:nth-child(even){
+    background-color: rgb(226, 226, 151);
+}
+table{
+    margin-top: 20px;
+}
+
+#tabla2 td:nth-child(odd), #tabla2 th:nth-child(odd){
+    background-color: rgb(10, 250, 30);
+}
+#tabla2 td:nth-child(even), #tabla2 th:nth-child(even){
+    background-color: rgb(32, 255, 118);
+}

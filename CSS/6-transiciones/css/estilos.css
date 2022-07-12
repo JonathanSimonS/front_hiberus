@@ -1,0 +1,26 @@
+*{
+    margin:             0;
+    padding:            0;
+}
+header{
+    margin-top:         25px;
+    text-align:         center;
+}
+
+.contenedor{
+    width:              30%;
+    background-color:   red;
+    margin-top:         15px;
+    border-radius:      20px;
+    padding:            20px;
+
+    animation-name: ejemplo;
+    animation-duration: 4s;
+}
+.contenedor:hover{
+    width:               70%;
+    background-color:    antiquewhite;
+    animation-name: ejemplo;
+    animation-duration: 4s;
+}
+

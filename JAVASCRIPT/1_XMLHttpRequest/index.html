@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XHR</title>
+    <script defer>
+    
+        // Descargar logo y mostrarlo en la página
+        let xhr = new XMLHttpRequest();
+
+        // Prepara la petición
+        let url = "https://pbs.twimg.com/profile_images/1410519199651348484/5wIFnWBg_400x400.jpg";
+        xhr.open("GET", url); // true -> petición asíncrona, false -> petición síncrona
+    
+        // Tipo de respuesta
+        // formatos : text, document, blob, arraybuffer
+        xhr.responseType = 'blob';
+
+        // Enviar petición
+        // método get no se pone nada, si es POST, pondriamos lo que viaja en el body
+        xhr.send();
+
+        // Procesar
+        xhr.onload = procesar;
+
+        function procesar(event) {
+            if (this.status == 200) {
+                var img = document.createElement('img');
+                img.src = window.URL.createObjectURL(Response);
+                document.appendChild(img);
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

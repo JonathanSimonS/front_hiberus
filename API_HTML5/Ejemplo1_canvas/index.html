@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figuras canvas</title>
+    <script defer>
+        
+        // Cambiar de función para probarlas
+        window.addEventListener('load', texto);
+        
+        function dibujarCuadrados() {
+            
+            // Dibujo base
+            var micanvas = document.getElementById("miCanvas");
+            var dibujo = micanvas.getContext("2d");
+
+            // // Rectángulo rojo
+            var rectangulo = dibujo.fillStyle= "red";
+            rectangulo = dibujo.fillRect(20,20,50,50);
+
+            // // Rectángulo con perímetro azul
+            var rectangulo2 = dibujo.strokeStyle= "blue";
+            rectangulo2 = dibujo.strokeRect(50,50,50,50);
+            
+            // Rectángulo amarillo borde verde
+            var rectangulo3 = dibujo.fillStyle= "yellow";
+            rectangulo3 = dibujo.strokeStyle= "green";
+            rectangulo3 = dibujo.fillRect(80,80,50,50);
+            rectangulo3 = dibujo.strokeRec(80,80,50,50);
+
+        }
+
+        function dibujarCirculos(){
+
+            // Dibujo base
+            micanvas = document.getElementById("miCanvas");
+            dibujo = micanvas.getContext("2d");    
+            dibujo2 = micanvas.getContext("2d");    
+            trapecio = micanvas.getContext("2d");    
+
+            // Pentágono
+            dibujo2.fillStyle = "orange";
+            dibujo2.moveTo(50,30);
+            dibujo2.lineTo(75,65);
+            dibujo2.lineTo(60,100);
+            dibujo2.lineTo(40,100);
+            dibujo2.lineTo(25,65);
+            dibujo2.closePath();
+            dibujo2.fill();
+            dibujo2.stroke();
+
+            // Trapecio
+            trapecio.fillStyle = "orange";
+            trapecio.moveTo(50,200);
+            trapecio.lineTo(150,200);
+            trapecio.lineTo(185,250);
+            trapecio.lineTo(20,250);
+            trapecio.closePath();
+            trapecio.fill();
+            trapecio.stroke();
+            
+        }
+
+        function pokeball(){
+
+            // Dibujo base
+            micanvas = document.getElementById("miCanvas");
+  
+            // //Pokeball 
+            dibujo.fillStyle = 'red'; 
+            dibujo.beginPath() ;
+            dibujo.arc(150, 100, 50, 0, 2 * Math.PI) ;
+            dibujo.fill() ;
+            dibujo.fillStyle = 'white'; 
+            dibujo.beginPath() ;
+            dibujo.arc(150, 100, 50, 0, 1 * Math.PI) ;
+            dibujo.fill() ;
+            dibujo.fillStyle = "black"; 
+            dibujo.fillRect(100, 98, 100, 5); 
+            dibujo.fillStyle = 'black'; 
+            dibujo.beginPath() ;
+            dibujo.arc(150, 100, 10, 0, 2 * Math.PI) ;
+            dibujo.fill() ;
+            dibujo.fillStyle = 'white'; 
+            dibujo.beginPath() ;
+            dibujo.arc(150, 100, 9, 0, 2 * Math.PI) ;
+            dibujo.fill() ;
+
+
+            }
+    
+        function texto() {
+            micanvas = document.getElementById("miCanvas");
+            dibujo = micanvas.getContext("2d");
+
+            dibujo.fillStyle = "green";
+            dibujo.font = "bold 30px Arial";
+            dibujo.fillText("PRUEBA",20, 40);
+
+            dibujo.strokeStyle = "green";
+            dibujo.font = "bold 30px Arial";
+            dibujo.strokeText("PRUEBA",20,65);
+        }
+    </script>
+</head>
+<body>
+    <canvas id="miCanvas" style="border: 1px solid rgb(0, 0, 0);" width="400" height="300">
+        Canvas no soportado
+    </canvas>
+</body>
+</html>
