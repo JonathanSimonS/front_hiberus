@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Worker</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <!-- <script src="js/script.js" defer></script> -->
+</head>
+<body>
+
+    <h1>Web Worker</h1>
+
+    <div class="container">
+        <div class="container-item">
+            <p>Contador: <span id="resultado"></span> </p>
+            <button id="btnAbrirSocket" onclick="arrancarWorker()">Abrir worker</button>
+            <button id="btnCerrarSocket" onclick="pararWorker()">Parar worker</button>
+            <button id="btnBorrar" onclick="borrarWorker()">Borrar worker</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        let worker;
+
+        function arrancarWorker() {
+            // alert("Alerta por subnormal");
+            if(typeof(worker) == "undefined") {
+                                
+                //crear worker
+                worker = new Worker("tarea.js");
+
+                // tomamos valor almacenado
+                if (localStorage.numero != undefined) {
+                   worker.postMessage(localStorage.numero);
+                }
+
+                // escuchar msjs recibidos
+                worker.onmessage = function(event) {
+                    document.getElementById("resultado").innerHTML = event.data;
+                    // guardar en el nav
+                    localStorage.numero = event.data;
+                };
+            }
+        }
+        function pararWorker() {
+            // finalizar el worker
+            worker.terminate();
+            // elimino worker
+            worker = undefined;
+        }
+
+        function borrarWorker() {
+            localStorage.removeItem("numero");
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var frutas = ["Kiwi","Pera","Manzana","Melocotón","Sandía"];
+        console.log(frutas);
+
+        for (const fruta in frutas) { console.log(fruta);}
+
+        frutas.forEach(a => {console.log(a);})
+
+        var frutasMayus = frutas.map(a => a.toUpperCase() )
+        console.log(frutasMayus);
+
+        // Inmutabilidad
+        console.log(frutas);
+
+        // Longitud mayor a 5 caractéres
+        console.log(frutas.filter(a => a.length > 5));
+
+        // Primera letra P
+        console.log(frutas.filter(a => a.charAt(0) == "P"));
+
+        // Última letra a
+        console.log(frutas.filter(a => a.charAt(a.length - 1) == "a"));
+
+        // coleccion.reduce((acumulador, que_recibo)) => operacion
+        console.log([2,5,8,0.5].reduce((suma,num) => suma +num));
+        console.log(frutas.reduce((cad,a) => cad + "-" + a));
+
+        var frutas = ["Kiwi","Pera","Manzana","Melocotón","Sandía"];
+
+        // EJERCICIO
+        // 1- poner frutas en mayuscula
+        // 2- filtrar por las que terminan con a
+        // 3 - devolver cadena
+
+        console.log(frutas
+                        .map(a => a.toUpperCase())
+                        .filter(a => a.charAt(a.length - 1) == "A")
+                        .reduce((cad,a) => cad + ", " + a)
+                    );
+
+        // console.log(frutas.filter(a => a.charAt(a.length - 1) == "a"));
+        // console.log(frutas.reduce((cad,a) => cad + ", " + a));
+
+        // Dado un array de caracteres de numeros, devolver la suma de los pares
+        console.log(["10","5","8","7"]
+                        .map(a => parseInt(a))
+                        .filter(a => a%2==0)
+                        .reduce((suma,num) => suma + num)
+                    );
+
+        // Con un array de nombres, devolver una cadena con los nombres en mayusculas
+        console.log(["Pilar","Paco","Ana"]
+                        .map(a => a.toUpperCase())
+                        .reduce((cad,a) => cad + ", " + a)
+                    );
+
+        // ordenar con sort
+        const ar = [2,3,10,5,6,10,1,2]
+        console.log(ar.sort());
+        console.log(ar.sort((a,b) => a-b));
+        ar.sort() // [1, 10, 10, 2, 2,  3,  5, 6]
+        ar.sort((a,b) => a-b) // [ 1, 2,  2,  3, 5, 6, 10, 10]      
+    </script>
+</body>
+</html>

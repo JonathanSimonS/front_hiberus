@@ -1,0 +1,43 @@
+/**** ESTILOS COMUNES ****/
+*{
+    margin: 0 auto;
+    padding: 0 auto;
+}
+body{
+    width: 90%;
+    text-align: center;
+    margin-top: 2rem;
+}
+ul{
+    list-style: none;
+}
+
+/**** FIN ESTILOS COMUNES ****/
+
+.container{
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template:auto  / auto  auto auto;
+    text-align: center;
+}
+.lista{
+    margin-top: 10px;
+}
+.contenedor{    
+    padding: 10px;
+    text-align: center;
+    width:70%;
+    margin-top: 2rem;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+#contenedorAlmeria{
+    background-image: url("../img/almeria.png");
+}
+div > h4{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+}

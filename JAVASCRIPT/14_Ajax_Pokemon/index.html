@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX - API POKEMON</title>
+    <script defer src="js/script.js"></script>
+
+    <!-- Link bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   
+    <style>
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        table{
+            margin:auto;
+            margin-bottom: 4rem;
+        }
+        tr{
+            border-bottom: 5px solid rgb(39, 39, 39);
+        }
+        td, th{
+            border-right: 2px solid rgb(12, 11, 11);
+        }
+        td{
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        <h1 class="mt-4 text-center">AJAX - API POKEMON</h1>
+
+        <h3 class="mt-4 text-center">Lista de Pokemón automática</h3>
+    
+        <div class="text-center" >
+            <ul id="listaPokemon"></ul>
+        </div>
+    
+        <!-- Buscar pokemon -->
+        <h3 class="mt-4 text-center">Búsqueda de Pokemón</h3>
+    
+        <div class="mt-4 text-center justify-content-center">
+            <label for="nombre">Nombre del pokemon:</label>
+            <input class="w-25" type="text" name="nombre" id="nombre">
+        
+            <table class="text-center w-50 mt-4" id="resultado">
+                <tr>
+                    <th> Nombre </th>
+                    <th> Imagen delantera </th>
+                    <th> Imagen trasera</th>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+    
+    
+</body>
+</html>
+
+
+<!-- let datos = JSON.parse(xhr.responseText);
+
+let img1 = datos.sprites.front_default;
+let img2 = datos.sprites.back_default; -->

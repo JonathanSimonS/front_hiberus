@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <script>
+
+        // crear array
+        const array1 = new Array();
+        const array2 = [];
+        const array3 = new Array(2);
+        const array4 = new Array("Luis","Luisa","Ana","Pablo");
+        const array5 = ["Luis","Luisa", "Ana", "Pablo"];
+
+        // agregar elementos al array
+        array3[0] = "Pera";
+        array3[1] = "Limón";
+        array3[2] = "Plátano";
+
+        array3.push("Naranja");
+        console.log(array3);
+        array3.splice(1,0,'Nuez','Mandarina');
+
+        console.log(array3);
+
+        document.write("Reverse: " + array4.reverse() + "<br>");
+        document.write("Sort: " + array4.sort() + "<br>");
+        document.write("Sort: " + [5,8,120,2].sort() + "<br>");
+        document.write("Sort: " + [5,8,120,2].sort((a,b) => a-b).reverse() + "<br>");
+        document.write("Sort + reverse : " + [5,8,120,2].sort((a,b) => a-b) + "<br>");
+        document.write("Join: " + [5,8,120,2].join() + "<br>");
+        document.write("Join: " + [5,8,120,2].join(" | ") + "<br>");
+        document.write("Join: " + [5,8,120,2].join(" | ") + "<br>");
+
+    </script>
+</body>
+</html>

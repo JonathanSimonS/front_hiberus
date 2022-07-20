@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Worker</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <!-- <script src="js/script.js" defer></script> -->
+</head>
+<body>
+
+    <h1>Ejercicio Web Worker Individual</h1>
+
+    <div class="container">
+        <div class="container-item">
+            <!-- <p>Contador: <span id="resultado"></span> </p> -->
+            <button id="iniciar" onclick="iniciar()">Iniciar tarea 1</button>
+            <button id="parar" onclick="parar()">Parar tarea 1</button>
+            <button id="borrar" onclick="borrar()">Reiniciar 1</button>
+        </div>
+        <div class="container-item">
+            <button id="iniciar2" onclick="iniciar2()">Iniciar tarea 2</button>
+            <button id="parar2" onclick="parar2()">Parar tarea 2</button>
+            <button id="borrar2" onclick="borrar2()">Reiniciar 2</button>
+        </div>
+        <div class="container-item" style="font-size: 1.2rem; font-weight: bolder;">
+            <div id="tarea1" >Inicia tarea 1</div>
+            <div id="tarea2">Inicia tarea 2</div>
+        </div>
+    </div>
+
+    
+    <script>
+
+        let worker;
+        let worker2;
+
+        function iniciar() {
+            // alert("Alerta por subnormal");
+            if(typeof(worker) == "undefined") {
+                                
+                //crear worker
+                worker = new Worker("js/tarea1.js");
+
+                // tomamos valor almacenado
+                if (localStorage.numero != undefined) {
+                    worker.postMessage(localStorage.numero);
+                }
+
+                // escuchar msjs recibidos
+                worker.onmessage = function(event) {
+                    document.getElementById("tarea1").innerHTML = "Hola "+event.data+" desde Tarea 1";
+                    // guardar en el nav
+                    localStorage.numero = event.data;
+                };
+
+            }
+        }
+        function iniciar2() {
+            // alert("Alerta por subnormal");
+            if(typeof(worker2) == "undefined") {
+                                
+                //crear worker
+                worker2 = new Worker("js/tarea2.js");
+
+                // tomamos valor almacenado
+                if (localStorage.numero != undefined) {
+                    worker2.postMessage(localStorage.numero);
+                }
+
+                worker2.onmessage = function(event) {
+                    document.getElementById("tarea2").innerHTML = "Hola "+event.data+" desde Tarea 2";
+                    // guardar en el nav
+                    localStorage.numero2 = event.data;
+                };
+            }
+        }
+
+        function parar() {
+            if(typeof(worker) != "undefined") {
+                // finalizar el worker
+                worker.terminate();
+
+                // elimino worker
+                worker = undefined;
+            }
+        }
+
+        function parar2() {
+            if(typeof(worker2) != "undefined") {
+                // finalizar el worker
+                worker2.terminate();
+
+                // elimino worker
+                worker2 = undefined;
+            }
+        }
+
+        function borrar() {
+            localStorage.removeItem("numero");
+            document.getElementById("tarea1").innerHTML = "Hola 0 desde Tarea 1";
+        }
+
+        function borrar2() {
+            localStorage.removeItem("numero2");
+            document.getElementById("tarea2").innerHTML = "Hola 0 desde Tarea 2";
+        }
+
+    </script>
+
+</body>
+</html>

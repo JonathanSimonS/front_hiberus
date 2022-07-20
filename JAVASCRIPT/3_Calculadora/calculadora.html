@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/script.js" defer></script>
+    <title>Actividad 5</title>
+    <!-- Aplico algo de estilo para el formulario -->
+    <style>
+        body{ font-family: 'Courier New', Courier, monospace;width:300px; margin:0px auto;background-color: rgb(189, 207, 201);font: 1em sans-serif;}
+        form{ background-color: rgb(196, 192, 143); padding: 2em;border: 1px solid rgb(7, 7, 7); border-radius: 1em;text-align: center;}
+        label {  display: inline;width: 2000px;}  
+        h2 {text-align: center; }
+        input { margin-top: 10px; display: inline;width: 140px;} 
+        button { margin-top: 10px; font-size: 1.5em;width: 80px;} 
+    </style>
+</head>
+<body>
+    <!-- Calculadora -->
+        <h2>Calculadora</h2>
+
+        <label>Operando 1</label>
+        <input type="text" id="operando1"/>
+        <label>Operando 2</label>
+        <input type="text" id="operando2"/>
+        <button onclick="sumar()"> + </button>
+        <button onclick="restar()">-</button>
+        <button onclick="multiplicar()">*</button>
+        <button onclick="dividir()">÷</button>
+        <button onclick="mod()">MOD</button>
+        <button onclick="potencia()">^</button>
+
+        <h1 id="resultado"></h1>
+</body>
+</html>

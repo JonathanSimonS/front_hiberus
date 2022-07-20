@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Worker</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <!-- <script src="js/script.js" defer></script> -->
+</head>
+<body>
+
+    <h1>Ejercicio Web Worker</h1>
+
+    <div class="container">
+        <div class="container-item">
+            <!-- <p>Contador: <span id="resultado"></span> </p> -->
+            <button id="iniciar" onclick="iniciar()">Iniciar tareas</button>
+            <button id="parar" onclick="parar()">Parar tareas</button>
+            <button id="borrar" onclick="borrar()">Reiniciar</button>
+        </div>
+        <div class="container-item">
+            <div id="tarea1">Tarea 1</div>
+            <div id="tarea2">Tarea 2</div>
+        </div>
+    </div>
+
+    
+    <script>
+
+        let worker;
+        let worker2;
+
+        function iniciar() {
+            // alert("Alerta por subnormal");
+            if(typeof(worker) == "undefined") {
+                                
+                //crear worker
+                worker = new Worker("js/tarea1.js");
+                worker2 = new Worker("js/tarea2.js");
+
+                // tomamos valor almacenado
+                if (localStorage.numero != undefined) {
+                    worker.postMessage(localStorage.numero);
+                    worker2.postMessage(localStorage.numero);
+                }
+
+                // escuchar msjs recibidos
+                worker.onmessage = function(event) {
+                    document.getElementById("tarea1").innerHTML = "Hola "+event.data+" desde Tarea 1";
+                    // guardar en el nav
+                    localStorage.numero = event.data;
+                };
+                worker2.onmessage = function(event) {
+                    document.getElementById("tarea2").innerHTML = "Hola "+event.data+" desde Tarea 2";
+                    // guardar en el nav
+                    localStorage.numero = event.data;
+                };
+            }
+        }
+
+        function parar() {
+            if(typeof(worker) != "undefined") {
+                // finalizar el worker
+                worker.terminate();
+                worker2.terminate();
+
+                // elimino worker
+                worker = undefined;
+                worker2 = undefined;
+            }
+        }
+
+        function borrar() {
+            localStorage.removeItem("numero");
+            document.getElementById("tarea1").innerHTML = "Hola 0 desde Tarea 1";
+            document.getElementById("tarea2").innerHTML = "Hola 0 desde Tarea 2";
+
+        }
+
+    </script>
+
+</body>
+</html>

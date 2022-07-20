@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script defer>
+    var frutas = ["🍇", "🍊", "🍍", "🥥", "🍊", "🍍"]
+
+    // Formas de preparar zumo
+    function prepararZumoNormal(fruta){
+      return "🍹"
+    }
+    var prepararZumoAnonima = function(fruta){
+      return "🍹"
+    }
+    // Cuando solo tenemos un parámetro podemos omitir los paréntesis
+    // Cuando solo tenemos una instrucción en el cuerpo de la función
+    // podemos omitir las llaves y el return
+    var prepararZumoArrow1 = fruta => "🍹"
+    var prepararZumoArrow3 = fruta => { return "🍹" }
+    var prepararZumoArrow2 = (fruta) => "🍹"
+    var prepararZumoArrow4 = (fruta) => { return "🍹" }
+
+    // Métodos de array
+    console.log("frutas:", frutas)
+    console.group("Metodos de array: ")
+
+    console.group("forEach fruta:")
+    console.log("No devuelve nada, para iterar por los elementos")
+    frutas.forEach(fruta => console.log(fruta))
+    console.groupEnd()
+    
+    console.log("")
+    console.group("map prepararZumo, la forma se puede cambiar al gusto:")
+    console.log("Crea un nuevo array aplicando una función a cada elemento")
+    console.log(frutas + " -> " + frutas.map(prepararZumoAnonima))
+    console.groupEnd()
+    
+    console.log("")
+    console.group("filter 🍊:")
+    console.log("Crea un nuevo array con los elementos que cumplan la condición")
+    console.log(frutas + " -> " + frutas.filter(fruta => fruta === "🍊"))
+    console.groupEnd()
+
+    console.log("")
+    console.group("reduce a macedonia")
+    console.log("Partiendo de un array se crea un único elemento")
+    console.log(frutas + " -> " + frutas.reduce((macedonia, fruta) => macedonia + fruta, ""))
+    console.groupEnd()    
+
+
+    // EXTRA
+    console.log("")
+    console.group("findIndex 🍍:")
+    console.log("Devuelve la posición del primero elemento que cumpla la condición")
+    console.log(frutas + " -> " + frutas.findIndex(fruta => fruta === "🍍"))
+    console.groupEnd()
+
+    console.log("")
+    console.group("find 🍍:")
+    console.log("Devuelve el primero elemento que cumpla la condición")
+    console.log(frutas + " -> " + frutas.find(fruta => fruta === "🍍"))
+    console.groupEnd()
+
+    console.log("")
+    console.group("some 🥥:")
+    console.log("Devuelve TRUE si algún elemento cumple la condición, si no FALSE")
+    console.log(frutas + " -> " + frutas.some(fruta => fruta === "🥥"))
+    console.groupEnd()
+
+    console.log("")
+    console.group("every 🍇:")
+    console.log("Devuelve TRUE si todos los elementos cumplen la condición, si no FALSE")
+    console.log(frutas + " -> " + frutas.every(fruta => fruta === "🍇"))
+    console.groupEnd()
+    console.groupEnd()
+  </script>
+</body>
+</html>

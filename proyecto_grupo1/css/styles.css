@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* ** Reset ** */
+html{
+    box-sizing: border-box;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+*,
+*::after,
+::before{
+    box-sizing: inherit;
+}
+
+body{
+    margin: 0;
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100vh;
+}
+/***** HEADER ******/
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    padding: 1rem;
+    width: 100%;
+    height: 4rem;
+    background-color:brown;
+}
+
+.header > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.menu a{
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: var(--first-color);
+}
+/***** FIN HEADER ******/
+
+
+/******* FOOTER ***********/
+.contenedorfooter{
+    width: 100%;
+    color: #ffffff !important;
+    font-size: 0.9em;
+    text-align: center;
+    align-items: center;
+}
+.pieColum1{
+    float: left;    
+    width: 50%;
+    background-color:rgb(99, 88, 88) ;
+    height: 100px;
+    line-height: 38px;
+}
+.pieColum2{
+    float: left;    
+    width: 50%;
+    background-color:rgb(143, 125, 125) ;
+    height: 100px;
+    line-height: 120px;
+
+}
+.pieColum3{
+    clear: both;    
+    width: 100%;
+    background-color:rgb(75, 74, 74) ;
+    height: 100px;
+    line-height: 100px;
+}
+.iconosPie{
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 5px;
+    color: rgb(253, 253, 253);
+    background-color:rgb(75, 74, 74) ;
+}
+.iconosPie:hover{
+    background-color:rgb(128, 127, 127) ;
+}
+.button_pie {
+    width: 100px;
+    height: 35px;
+    background-color: rgba(165, 97, 42, 0.6);
+    color: aliceblue;
+    border-radius: 10%;
+}
+.button_pie:hover {
+    background-color: rgba(187, 149, 119, 0.6);
+}
+/******* FIN FOOTER ***********/

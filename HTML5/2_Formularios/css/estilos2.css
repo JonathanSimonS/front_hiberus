@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+form{
+    width: 90%;
+    margin: 20px;
+    text-align: center;
+ 
+}
+label{
+    width: 30%;
+    margin-top: 10px;
+    text-align: left;
+}
+input{
+    align-items: flex-end;
+    width: 40%;
+}

@@ -1,0 +1,31 @@
+/**** ESTILOS COMUNES ****/
+*{
+    margin: 0 auto;
+    padding: 0 auto;
+}
+body{
+    width: 90%;
+    text-align: center;
+    margin-top: 2rem;
+}
+/**** FIN ESTILOS COMUNES ****/
+
+.container{
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template:auto  / auto auto;
+    text-align: center;
+}
+#inicio{
+    margin-top: 2rem;
+    height: 200px;
+    border: 2px solid black;
+}
+.contenedor{
+    text-align: center;
+    width:100%;
+    margin-top: 2rem;
+    height: 200px;
+    border: 2px solid black;
+}

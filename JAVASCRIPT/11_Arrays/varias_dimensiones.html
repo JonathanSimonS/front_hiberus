@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varias dimensiones</title>
+</head>
+<body>
+    <script>
+
+        // crear matriz de 3 filas y 2 columnas
+
+        // // una manera
+        // const array1 = new Array(3);
+        // array1[0] = new Array(2);
+        // array1[1] = new Array(2);
+        // array1[2] = new Array(2);
+
+        // // otra manera
+        // const array2 = new Array(   new Array("Luis","Paula"),
+        //                             new Array("Jorge","Andres"),
+        //                             new Array("Alicia","Pedro")
+        //                         );
+        
+        // // otra manera más
+        const array3 = [["Luis","Luisa"],["Ana", "Pablo"],["Jose","Andrés"]]                   
+        
+        // // agregar elementos al array
+        // array1[0][0] = "Luis";
+        // array1[0][1] = "Paula";
+        // array1[1][0] = "Jorge";
+        // array1[1][1] = "Andres";
+        // array1[2][0] = "Alicia";
+        // array1[2][1] = "Pedro";
+        // console.log(array1);
+        // console.table(array1);
+
+        // formas de recorrer un array
+        document.write("FOR TRADICIONAL<br>");
+        for (let i = 0; i < array3.length; i++) {
+            for (let j = 0; j < array3[i].length; j++) {
+                document.write(array3[i][j]+" ");
+            }
+            document.write("<br>");
+        }
+
+        document.write("<br><br>FOR IN<br>");
+        for (const i in array3) {
+            for (const j in array3[i]) {
+                document.write(array3[i][j]+" ");
+            }
+            document.write("<br>");
+        }
+
+        // En cada iteración el elemento (propiedad enumerable) correspondiente es asignado a variable.
+        document.write("<br><br>FOR OF<br>");
+        for (const i of array3) {
+            for (const j of i) {
+                document.write(j+" ");
+            }
+            document.write("<br>");
+        }
+
+        document.write("<br><br>ARRAY FOREACH<br>");
+        array3.forEach(a => { 
+            a.forEach( nombre => {
+                document.write(nombre + " ");} );
+            }) 
+        document.write("<br>");
+
+
+    </script>
+</body>
+</html>
