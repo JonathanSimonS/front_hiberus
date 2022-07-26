@@ -1,7 +1,7 @@
 window.addEventListener("load", init);
 
 function init() {
-    var select = document.getElementById("")
+    // var select = document.getElementById("")
     mostrarMapa();
 }
 
@@ -39,7 +39,7 @@ function mostrarLocalizacion(posicion) {
 
     btnAcercar.addEventListener("click", () => mapa.setZoom(++mapa.zoom));
     btnAlejar.addEventListener("click", () => mapa.setZoom(--mapa.zoom));
-console.log(tipo);
+    console.log(tipo);
     // mapa.setMapTypeId(google.maps.MapTypeId[tipo.value]); 
     tipo.addEventListener("change", () => mapa.setMapTypeId(google.maps.MapTypeId[tipo.value]));
 
