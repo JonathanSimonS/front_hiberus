@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GENERADOR</title>
+    </head>
+    <body>
+        <script>
+
+            
+            // devolver primos del 1 al 100
+            // si haces la división por cualquier número que no sea 1 o él mismo, 
+            //se obtiene un resto distinto de cero.
+
+            function esPrimo(n){
+                for (var i = 2; i <= n/2; i++){
+                    if (n % i == 0) return false;
+                }
+            }
+
+            function* miGenerador() {
+                let numero=0;
+                while (true) {
+                    let prim = true;
+                    if (esPrimo(numero)) yield numero;
+                    numero++;
+                }
+            }
+            
+            // creo el generador
+            let generador = miGenerador();
+
+            // lo usamos
+            console.log(generador.next().value);
+
+            
+            
+            for (let x=0;x<=100;x++) {
+                console.log(generador.next().value);
+            }
+
+
+
+
+            
+        </script>
+    </body>
+</html>

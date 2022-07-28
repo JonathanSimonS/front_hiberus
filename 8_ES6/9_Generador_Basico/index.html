@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GENERADOR</title>
+    </head>
+    <body>
+        <script>
+            function* miGenerador() {
+                let num=0;
+                while (true) {
+                    // tendría un bucle infinito
+                    yield num++;
+                }
+            }
+            
+            // creo el generador
+            let generador = miGenerador();
+
+            // lo usamos
+            console.log(generador.next().value);
+            console.log(generador.next().value);
+            console.log(generador.next());
+
+        </script>
+        
+    </body>
+</html>

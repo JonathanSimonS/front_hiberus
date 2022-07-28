@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Desestructuración</title>
+        <script src="js/alumno.js" ></script>
+    </head>
+    <body>
+        <script>
+
+            let alumnos = [ new Alumno(),
+                            new Alumno("María","Del Águila",8),
+                            new Alumno("Marcos","Sánchez Fernández",6.8),
+                        ];
+            
+            for (const alumno of alumnos) {
+                // Desestructuración
+                // {} para objetos
+                let {nombre,apellidos,nota} = alumno;
+                console.log(`${nombre} ${apellidos}: ${nota}`);
+            
+            }
+
+
+            let arrayAlumnos = [["María","Del Águila",5],
+                                ["María","Del Águila",8],
+                                ["María","Del Águila",6.75],
+                            ];
+
+            for (const alumno of arrayAlumnos) {
+                // [] para objetos
+                let [nombre,apellidos,nota] = alumno;
+                
+                let alumno = new Alumno("Marcos","Sánchez Fernández",6.8);
+                console.log(alumno.toString());
+            }
+            
+
+        </script>
+    </body>
+</html>

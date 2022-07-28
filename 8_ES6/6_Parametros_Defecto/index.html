@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parametros Defectos</title>
+</head>
+<body>
+    <script>
+
+        function detalleEmpleado(nombre, sueldo, estadoCivil) {
+            nombre      || ( nombre = 'José' );
+            sueldo      || ( sueldo = '18000' );
+            estadoCivil || ( estadoCivil = 'Casada' );
+
+            return `Nombre: ${nombre} Sueldo: ${sueldo} Estado Civil: ${estadoCivil}`
+        }
+
+        // desestructurado
+        function detalleEmpleadoDeses(obj) {
+            const {nombre,sueldo=20000,estadoCivil="Soltero"} = obj;
+
+            return `Nombre: ${nombre} Sueldo: ${sueldo} Estado Civil: ${estadoCivil}`
+        }
+        
+        // MÁS desestructurado
+        function detalleEmpleadoDeses2({nombre,sueldo=20000,estadoCivil="Soltero"}) {
+            return `Nombre: ${nombre} Sueldo: ${sueldo} Estado Civil: ${estadoCivil}`
+        }
+
+
+        console.log(detalleEmpleado());
+        console.log(detalleEmpleado("Pilar"));
+        console.log(detalleEmpleado("", "", estadoCivil="Separado"));
+
+        console.log(detalleEmpleadoDeses({nombre: "Pedro"}));
+        console.log(detalleEmpleadoDeses({salario:12000, nombre: "Luis"}));
+        console.log(detalleEmpleadoDeses({estadoCivil:"Casada", salario:22000, nombre: "Belén"}));
+
+        console.log(detalleEmpleadoDeses2({nombre: "Pedro"}));
+        console.log(detalleEmpleadoDeses2({salario:12000, nombre: "Luis"}));
+        console.log(detalleEmpleadoDeses2({estadoCivil:"Casada", salario:22000, nombre: "Belén"}));
+
+    </script>
+</body>
+</html>

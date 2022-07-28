@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propagación SPREAD</title>
+</head>
+<body>
+    
+
+    <script>
+
+        let nombres = ["Juan", "María","Luis","Laura", "Jorge"];
+        console.log(nombres);       // mostrar array
+        console.log(...nombres);    // mostrar elementos array
+
+        // spread solo con elementos iterables
+        let numero = 4;
+        console.log(numero);
+        //console.log(...numero); muestra error
+
+        let mas_nombres = [...nombres, "Antonio","Beatriz"];
+        //let mas_nombres = [nombres, "Antonio","Beatriz"];
+        console.log(mas_nombres);
+    </script>
+</body>
+</html>

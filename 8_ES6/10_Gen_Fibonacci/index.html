@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GENERADOR</title>
+    </head>
+    <body>
+        <script>
+
+            function* fibonacci() {
+                let num = 0;
+                let num2= 1;
+                yield num;
+                yield num2;
+
+                while (true) {
+                    let aux = num + num2;
+                    num = num2;
+                    num2 = aux;
+                    yield aux;
+                }
+            }
+            
+            // creo el generador
+            let generadorF = fibonacci();
+
+            // lo usamos
+            for (let i = 1; i <=20; i++) {
+                console.log(generadorF.next().value);
+            }
+
+
+            // numeros de 5 en 5 
+            function* miGenerador() {
+                let num=0;
+                while (true) {
+                    // tendría un bucle infinito
+                    yield num+=5;
+                }
+            }
+            
+            // creo el generador
+            let generador = miGenerador();
+
+            // lo usamos
+            for (let i = 1; i <=10; i++) {
+                console.log(generador.next().value);
+            }
+
+            
+            
+        </script>
+    </body>
+</html>

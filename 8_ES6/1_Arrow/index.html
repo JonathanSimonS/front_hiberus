@@ -7,6 +7,37 @@
     <title>Funciones arrow</title>
 </head>
 <body>
+    <script>
+        let datos = [1,2,3,4,5,6,7,8,9];
+
+        // callback funciones que se usan dentro de otras funciones
+
+        // funcion anónima
+        datos.forEach( function(element) {
+            console.log(element);
+        });
+
+        // función arrow
+        datos.forEach( (element) => {
+            console.log(element);
+        });
+
+        // Funcion arrow
+        let otraFuncion = (numero) => numero +2;
+
+        // equivalente a 
+        // function otraFuncion(numero) {
+        //     return numero + 2;
+        // }
+
+        // tambien se puede escribir así
+        // let otraFuncion = function(numero) {
+        //     return numero +2;
+        // }    
+
+        // callback es una funcion que se pasa como argumento de otra
+        console.log("R=> "+otraFuncion(6));
     
+    </script>
 </body>
 </html>

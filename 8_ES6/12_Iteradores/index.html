@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ITERADORES</title>
+    </head>
+    <body>
+        <script>
+
+            function miIterador(array) {
+                let index = 0;
+
+                return {
+                    next: function() {
+                        if (index < array.length) {
+                            return {value: array[index++], done: false}
+                        } else {
+                            return {done: true}
+                        }
+                    }
+                }
+            }
+
+            let it = miIterador(["Juan","Laura","Lauro","Víctor",]);
+            let siguiente = it.next();
+            
+            while (!siguiente.done) {
+                console.log(siguiente.value);
+                siguiente = it.next();
+            }
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template String</title>
+</head>
+<body>
+    
+
+    <script>
+
+        let nombre = "Pepito";
+        let apellido = "López";
+        let edad = 21;
+        console.log("Me llamo "+ nombre + " " + apellido + " y tengo " + edad + " años.");
+        console.log(`Me llamo ${nombre} ${apellido} y tengo ${edad} años.`);
+    
+        function mostrar(n, a, e) {
+            return `Me llamo ${nombre} ${apellido} y tengo ${edad} años.`
+        }
+        console.log(mostrar(nombre,apellido,edad));
+
+        
+    </script>
+</body>
+</html>
